@@ -1,0 +1,29 @@
+<p id="notice"> <%= notice %></p>
+      <h2>User info</h2>
+        <%= attachment_image_tag user, :profile_image, :fill, 90, 90, format: 'jpeg',fallback: 'no_image.jpg',size: '90x90' %>
+
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th> name</th>
+                <th> <%= user.name %></th>
+                
+                <% if user.id == current_user.id %>
+                <% end %>
+
+              </tr>
+              <tr>
+                <th> introduction</th>
+                <th> <%= user.introduction %></th>
+
+                <% if user.id == current_user.id %>
+                <% end %>
+
+              </tr>
+            </thead>
+          </table>
+          <div class="row">
+            <%= link_to edit_user_path(user) do  %>
+              <span class="btn btn-default glyphicon glyphicon-wrench"></span>
+            <% end %>
+          </div>

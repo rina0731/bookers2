@@ -1,0 +1,32 @@
+<title>Bookers</title>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-3">
+			<%= render 'list', user: @user %>
+			<%= render 'list2', book: @book %>
+		</div>
+
+		<div class="col-xs-9">
+			<h2>Books</h2>
+			<table class="table table-hover table-inverse">
+				<thead>
+					<tr>
+						<th></th>
+						<th> Title</th>
+						<th> Opinion</th>
+					</tr>
+				</thead>
+				<tbody>
+		            <% @books.each do |book| %>
+		            <tr>
+		            	<td><%= attachment_image_tag book.user, :profile_image, :fill, 50, 50, format: 'jpeg',fallback: 'no_image.jpg',size: '50x50' %></td>
+			            <td><%= book.title %></td>
+			            <td><%= book.opinion %></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
