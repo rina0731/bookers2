@@ -6,7 +6,7 @@
             <thead>
               <tr>
                 <th> name</th>
-                <th> <%= user.name %></th>
+                <th> <%= user.username %></th>
                 
                 <% if user.id == current_user.id %>
                 <% end %>
@@ -23,7 +23,7 @@
             </thead>
           </table>
           <div class="row">
-            <%= link_to edit_user_path(user) do  %>
+            <%= link_to edit_user_path(user), class: "edit_user_#{@user.id}" do  %>
               <span class="btn btn-default glyphicon glyphicon-wrench"></span>
             <% end %>
           </div>

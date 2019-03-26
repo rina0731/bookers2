@@ -15,11 +15,11 @@
     <div class="form-group has-icon">
       <h4>Name</h4>
       <label class="control-label sr-only" for="inputEmail">Name</label>
-      <%= f.text_field :name %>
+      <%= f.text_field :username, class: "name" %>
       <h4>Image</h4>
-      <%= f.attachment_field :profile_image %>
+      <%= f.attachment_field :profile_image,class: "user_image" %>
       <h4>Introduction</h4>
-      <%= f.text_field :introduction %>
+      <%= f.text_field :introduction, class: "introducyion" %>
       <br>
       <%= f.submit %>
     </div>
