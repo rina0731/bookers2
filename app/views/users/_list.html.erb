@@ -23,7 +23,6 @@
             </thead>
           </table>
           <div class="row">
-            <%= link_to edit_user_path(user), class: "edit_user_#{@user.id}" do  %>
-              <span class="btn btn-default glyphicon glyphicon-wrench"></span>
-            <% end %>
+            <%= link_to "", edit_user_path(current_user), class: "btn btn-default glyphicon glyphicon-wrench edit_user_#{current_user.id}" %>
+
           </div>

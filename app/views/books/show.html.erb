@@ -1,4 +1,4 @@
-div class="container">
+<div class="container">
 	<div class="row">
 		<div class="col-xs-3">
 			<%= render 'users/list', user: @book.user %>
@@ -21,8 +21,13 @@ div class="container">
 		            	<td><%= attachment_image_tag @book.user, :profile_image, :fill, 50, 50, format: 'jpeg',fallback: 'no_image.jpg',size: '40x40' %></td>
 			            <td><%= @book.title %></td>
 			            <td><%= @book.opinion %></td>
+			            
+			            <% if @user == current_user %>
 			            <td><%= link_to "edit",edit_book_path(@book.id), class: "edit_book_#{@book.id}"%></td>
+
 			            <td><%= link_to "destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか?", class: "destroy_book_#{@book.id}"%></td>
+			          <% end %>
+
 					</tr>
 				</tbody>
 			</table>
